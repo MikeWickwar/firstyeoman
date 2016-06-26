@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "node index.js"
+    "start": "webpack-dev-server --hot"
   },
   "dependencies": {
     "compass": "^0.1.1"
