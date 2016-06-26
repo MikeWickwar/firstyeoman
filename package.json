@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "postinstall": "bower install"
+    "start": "node index.js"
   },
   "dependencies": {
     "compass": "^0.1.1"
