@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "webpack-dev-server --hot"
+    "start": "Gruntfile.js node"
   },
   "dependencies": {
     "compass": "^0.1.1"
