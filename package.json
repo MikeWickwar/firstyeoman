@@ -40,7 +40,7 @@
   },
   "scripts": {
     "test": "karma start test/karma.conf.js",
-    "start": "Gruntfile.js node"
+    "start": "./Gruntfile node"
   },
   "dependencies": {
     "compass": "^0.1.1"
