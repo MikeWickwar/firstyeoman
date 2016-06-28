@@ -16,7 +16,24 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-google-cdn',
+    copy: {
+      dist: {
+          files: [{
+              expand: true,
+              dest: '<%= yeoman.dist %>',
+              cwd: 'heroku',
+              src: '*',
+              rename: function (dest, src) {
+                  var path = require('path');
+                  if (src === 'distpackage.json') {
+                      return path.join(dest, 'package.json');
+                  }
+                  return path.join(dest, src);
+              }
+          }]
+      }
+}
   });
 
   // Configurable paths for the application
@@ -224,7 +241,7 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
       }
-    }, 
+    },
 
     // Compiles Sass to CSS and generates necessary files if requested
     compass: {
